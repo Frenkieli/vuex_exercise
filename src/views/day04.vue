@@ -16,14 +16,14 @@ export default {
       localCount: 2
     };
   },
-  // computed: mapState({
-  //   // count: state => state.count,
-  //   countAlias: 'count',
-  //   countPlusLocalState(state) {
-  //     return state.count + this.localCount
-  //   }
-  // }),
-  computed: mapState(['count']),
+  computed: mapState({
+    // count: state => state.count,
+    countAlias: 'count',
+    countPlusLocalState(state) {
+      return state.count + this.localCount
+    }
+  }),
+  // computed: mapState(['count']),
   created() {},
   methods: {
   }
