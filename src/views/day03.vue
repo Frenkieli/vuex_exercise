@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <!-- {{ count }} - {{ store.state.count }} -->
     {{ count }} - {{ storeVM.state.count }}
     <button @click="increment">+</button>
