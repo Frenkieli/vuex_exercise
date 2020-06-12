@@ -4,6 +4,7 @@
     <router-link to="/">Home</router-link>
     <router-link to="day03">day03</router-link>
     <router-link to="day04">day04</router-link>
+    <router-link to="day05">day05</router-link>
   </div>
     <router-view>Z</router-view>
   </div>

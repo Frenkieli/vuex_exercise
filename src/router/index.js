@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import day03 from '../views/day03.vue'
 import day04 from '../views/day04.vue'
+import day05 from '../views/day05.vue'
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,14 @@ Vue.use(VueRouter)
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: day04
+  },
+  {
+    path: '/day05',
+    name: 'day05',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: day05
   },
 ]
 
