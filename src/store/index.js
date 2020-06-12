@@ -7,19 +7,19 @@ export default new Vuex.Store({
   state: {
     count: 0,
     todos: [
-      { id:1, text: 'todo1', done: true},
-      { id:2, text: 'todo2', done: false},
-    ] 
+      { id: 1, text: 'todo1', done: true },
+      { id: 2, text: 'todo2', done: false },
+    ]
   },
   // mutations 應該只能是同步函式,如果在內變調用異步函式會導致狀態難以被追蹤
   mutations: {
-    increment(state){
+    increment(state) {
       state.count++;
     },
-    incrementNumber(state, number){
+    incrementNumber(state, number) {
       state.count += number.add;
     },
-    decrement(state){
+    decrement(state) {
       state.count--;
     },
   },
@@ -35,6 +35,50 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    // increment(context) {
+    //   context.commit("increment");
+    // }
+    increment({ commit }) {
+      setTimeout(() => {
+        commit("increment");
+      }, 1000);
+    },
+    incrementNumber({ commit }, add) {
+      setTimeout(() => {
+        commit({
+          type: "incrementNumber",
+          add: add.add
+        });
+      }, 1000);
+    },
+    actionsA({ commit }) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          commit('increment');
+          resolve();
+        }, 1000);
+      })
+    },
+    // actionB({ dispatch, commit }) {
+    //   return dispatch('actionsA').then(res=>{
+    //     setTimeout(() => {
+    //       commit({
+    //         type: "incrementNumber",
+    //         add: 10
+    //       });
+    //       res;
+    //     }, 1000);
+    //   })
+    // }
+    async actionB({ dispatch, commit }) {
+      await dispatch('actionsA')
+      setTimeout(() => {
+        commit({
+          type: "incrementNumber",
+          add: 10
+        });
+      }, 1000);
+    }
   },
   modules: {
   }

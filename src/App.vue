@@ -7,6 +7,7 @@
     <router-link to="day05">day05</router-link>
     <router-link to="day06">day06</router-link>
     <router-link to="day07">day07</router-link>
+    <router-link to="day08">day08</router-link>
   </div>
     <router-view>Z</router-view>
   </div>

@@ -1,10 +1,8 @@
 <template>
   <div>
     <div>{{ count }}</div>
-    <!--
-      <div>{{ countAlias }}</div>
-      <div>{{ countPlusLocalState }}</div>
-    -->
+    <div>{{ countAlias }}</div>
+    <div>{{ countPlusLocalState }}</div>
   </div>
 </template>
 
@@ -17,7 +15,7 @@ export default {
     };
   },
   computed: mapState({
-    // count: state => state.count,
+    count: state => state.count,
     countAlias: 'count',
     countPlusLocalState(state) {
       return state.count + this.localCount
