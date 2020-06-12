@@ -1,34 +1,16 @@
 <template>
   <div id="app">
-    {{ count }}
-    <button @click="increment">+</button>
-    <button @click="decrement">-</button>
+  <div id="nav">
+    <router-link to="/">Home</router-link>
+    <router-link to="day03">day03</router-link>
+  </div>
+    <router-view>Z</router-view>
   </div>
 </template>
 
 <script>
-import store from './store/index'
 export default {
   name: "App",
-  data() {
-    return {};
-  },
-  computed:{
-    count :function(){
-      return store.state.count
-    }
-  },
-  created() {
-
-  },
-  methods:{
-    increment : function(){
-      store.commit('increment');
-    },
-    decrement : function(){
-      store.commit('decrement');
-    }
-  }
 };
 </script>
 
@@ -47,7 +29,9 @@ export default {
   a {
     font-weight: bold;
     color: #2c3e50;
-
+    padding: 2px;
+    margin: 2px;
+    border: 1px solid #000;
     &.router-link-exact-active {
       color: #42b983;
     }
