@@ -7,6 +7,7 @@ import day05 from '../views/day05.vue'
 import day06 from '../views/day06.vue'
 import day07 from '../views/day07.vue'
 import day08 from '../views/day08.vue'
+import day09 from '../views/day09.vue'
 
 Vue.use(VueRouter)
 
@@ -71,6 +72,14 @@ Vue.use(VueRouter)
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: day08
+  },
+  {
+    path: '/day09',
+    name: 'day09',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: day09
   },
 ]
 

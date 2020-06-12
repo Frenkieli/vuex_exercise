@@ -3,6 +3,40 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+
+let hello = {
+  state:{
+    title: '你好阿'
+  },
+  mutations:{
+    addName(state , obj) {
+      state.title += obj.str;
+    },
+  },
+  getters:{
+    getTitle: state => {
+      return state.title
+    },
+  }
+}
+
+let hello2 = {
+  namespaced: true,
+  state:{
+    title: '你好阿'
+  },
+  mutations:{
+    addName(state , obj) {
+      state.title += obj.str;
+    },
+  },
+  getters:{
+    getTitle: state => {
+      return state.title
+    },
+  }
+}
+
 export default new Vuex.Store({
   state: {
     count: 0,
@@ -81,5 +115,7 @@ export default new Vuex.Store({
     }
   },
   modules: {
+    hello : hello,
+    hello2 : hello2
   }
 })
