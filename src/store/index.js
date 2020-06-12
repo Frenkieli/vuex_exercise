@@ -11,9 +11,13 @@ export default new Vuex.Store({
       { id:2, text: 'todo2', done: false},
     ] 
   },
+  // mutations 應該只能是同步函式,如果在內變調用異步函式會導致狀態難以被追蹤
   mutations: {
     increment(state){
       state.count++;
+    },
+    incrementNumber(state, number){
+      state.count += number.add;
     },
     decrement(state){
       state.count--;
